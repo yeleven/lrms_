@@ -1,0 +1,44 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="lrms:war exploded">
+    <output-path>$PROJECT_DIR$/target/lrms</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="lrms" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: javax.servlet:javax.servlet-api:3.0.1" />
+          <element id="library" level="project" name="Maven: com.jfinal:jfinal:3.0" />
+          <element id="library" level="project" name="Maven: cglib:cglib-nodep:3.1" />
+          <element id="library" level="project" name="Maven: org.ow2.asm:asm:5.1" />
+          <element id="library" level="project" name="Maven: com.ibeetl:beetl:2.5.2" />
+          <element id="library" level="project" name="Maven: org.antlr:antlr4-runtime:4.2" />
+          <element id="library" level="project" name="Maven: org.abego.treelayout:org.abego.treelayout.core:1.0.1" />
+          <element id="library" level="project" name="Maven: org.antlr:antlr4-annotations:4.2" />
+          <element id="library" level="project" name="Maven: c3p0:c3p0:0.9.1.2" />
+          <element id="library" level="project" name="Maven: commons-codec:commons-codec:1.10" />
+          <element id="library" level="project" name="Maven: org.apache.commons:commons-compress:1.11" />
+          <element id="library" level="project" name="Maven: dom4j:dom4j:1.6.1" />
+          <element id="library" level="project" name="Maven: xml-apis:xml-apis:1.0.b2" />
+          <element id="library" level="project" name="Maven: net.sf.ehcache:ehcache:2.10.2" />
+          <element id="library" level="project" name="Maven: net.sf.ehcache:ehcache-web:2.0.4" />
+          <element id="library" level="project" name="Maven: net.sf.ehcache:ehcache-core:2.4.6" />
+          <element id="library" level="project" name="Maven: org.apache.velocity:velocity:1.7" />
+          <element id="library" level="project" name="Maven: com.thetransactioncompany:java-property-utils:1.9" />
+          <element id="library" level="project" name="Maven: com.thetransactioncompany:cors-filter:1.7.1" />
+          <element id="library" level="project" name="Maven: log4j:log4j:1.2.17" />
+          <element id="library" level="project" name="Maven: com.oracle:ojdbc6:12.1.0.1-atlassian-hosted" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.18" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-log4j12:1.7.18" />
+          <element id="library" level="project" name="Maven: org.apache.commons:commons-lang3:3.4" />
+          <element id="library" level="project" name="Maven: org.freemarker:freemarker:2.3.23" />
+          <element id="library" level="project" name="Maven: jstl:jstl:1.2" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/target/lrms/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="lrms/web/Web" />
+    </root>
+  </artifact>
+</component>
