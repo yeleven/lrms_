@@ -28,7 +28,7 @@ public class MainConfig extends JFinalConfig{
     }
 
     @Override
-    public void configPlugin(Plugins me) {
+    public void configPlugin(Plugins plugins) {
 
     }
 
