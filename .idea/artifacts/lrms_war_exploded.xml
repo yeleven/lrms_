@@ -15,7 +15,7 @@
           <element id="library" level="project" name="Maven: org.glassfish:javax.json:1.0.4" />
           <element id="library" level="project" name="Maven: com.ibm.icu:icu4j:58.2" />
           <element id="library" level="project" name="Maven: javax.servlet:javax.servlet-api:3.0.1" />
-          <element id="library" level="project" name="Maven: com.jfinal:jfinal:3.0" />
+          <element id="library" level="project" name="Maven: com.jfinal:jfinal:3.1" />
           <element id="library" level="project" name="Maven: cglib:cglib-nodep:3.1" />
           <element id="library" level="project" name="Maven: org.ow2.asm:asm:5.1" />
           <element id="library" level="project" name="Maven: com.ibeetl:beetl:2.5.2" />

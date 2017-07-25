@@ -8,10 +8,10 @@ import java.util.List;
 /**
  * Created by yequancai on 2017/7/19.
  */
-public class HelloController extends Controller{
+public class HelloController extends Controller {
     HelloService helloService = new HelloService();
-    public void index(){
-//        renderText("Hello JFinal World....GitCommitPushTest111...");
+
+    public void index() {
         render("/index2.html");
     }
 
