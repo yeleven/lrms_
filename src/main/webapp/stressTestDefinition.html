@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>压力测试定义</title>
+		<link href="css/bootstrap.min.css" rel="stylesheet" />
+		<link href="css/font-awesome.min.css" rel="stylesheet" />
+		<link href="css/style.css" rel="stylesheet" />
+		<link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+		<link href="css/zTreeStyle/zTreeStyle.css" rel="stylesheet" />
+		<link href="css/bootstrap-table/bootstrap-table.min.css" />
+		<link href="css/select2.min.css" rel="stylesheet" />
+		<style type="text/css">
+			td{
+				text-align: center;
+				vertical-align: middle;
+			}
+		</style>
+	</head>
+
+	<body class="panel-body" style="padding-bottom:0px;">
+		<div class="row">
+			<div class="col-lg-12">
+				<ol class="breadcrumb">
+					<li>
+						<a href="index2.html">首页</a>
+					</li>
+					<li>
+						<a href="#">流动性风险压力测试</a>
+					</li>
+					<li>
+						<a href="stressTestDefinition.html">压力测试定义</a>
+					</li>
+				</ol>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-4">
+				<button id="pressTestDefinitionAdd" class="btn btn-default"><i class="glyphicon glyphicon-plus-sign" title="新增"></i></button>
+				<!--<button id="btn_del" class="btn btn-default"><i class="glyphicon glyphicon-remove-circle" title="删除"></i></button>-->
+			</div>
+			<div class="col-xs-8 text-right">
+				<div class="form-inline">
+					<div class="form-group">
+						<input id="iptSearch" type="text" placeholder="请输入压力测试名称" style="width: 200px;" class="form-control">
+					</div>
+					<button id="search" class="btn btn-default search"><i class="fa fa-search"></i></button>
+					<button id="reset" class="btn btn-default search"><i class="glyphicon glyphicon-refresh"></i></button>
+					<!--<button id="export" class="btn btn-default search"><i class="glyphicon glyphicon-export"></i></button>-->
+				</div>
+			</div>
+		</div>
+		<br />
+		<table id="table"></table>
+
+		<div id="pressTestDefinitionAddContent" class="wrapper" style="display: none;">
+			<form>
+				<div class="col-sm-12">
+					<div class="form-group col-sm-12">
+						<label>压力测试名称</label>
+						<input class="form-control" />
+					</div>
+				</div>
+				<div class="col-sm-12">
+					<div class="form-group col-sm-12">
+						<label>币种</label>
+						<select class="form-control">
+							<option value="">人民币</option>
+							<option value="">美元</option>
+						</select>
+					</div>
+				</div>
+				<div class="col-sm-12">
+					<div class="form-group col-sm-12">
+						<label>压力测试描述</label>
+						<textarea class="form-control"></textarea>
+					</div>
+				</div>
+				<div class="col-sm-12">
+					<div class="form-group col-sm-12">
+						<label>数据日期</label>
+						<input class="form-control" value="2017-07-13" readonly/>
+					</div>
+				</div>
+				<div class="col-sm-12">
+					<div class="form-group col-sm-6">
+						<label>发起人</label>
+						<input class="form-control" value="渝中分行系统管理员" readonly/>
+					</div>
+					<div class="form-group col-sm-6">
+						<label>发起机构</label>
+						<input class="form-control" value="渝中分行" readonly/>
+					</div>
+				</div>
+			</form>
+		</div>
+
+		<div id="conditionDefinitionContent" class="wrapper" style="display: none;">
+			<form>
+				<div class="col-sm-12">
+					<div class="form-group col-sm-3">
+						<label>压力测试名称:</label>
+						<input class="form-control" />
+					</div>
+					<div class="form-group col-sm-3">
+						<label>币种:</label>
+						<select class="form-control" />
+						<option value="">人民币</option>
+						<option value="">美元</option>
+						</select>
+					</div>
+					<div class="form-group col-sm-3">
+						<label>数据日期:</label>
+						<input class="form-control" value="人民币" readonly />
+					</div>
+					<div class="form-group col-sm-3">
+						<label>压力测试描述:</label>
+						<input class="form-control" />
+					</div>
+				</div>
+			</form>
+			<div class="panel-body">
+				<div class="col-xs-4">
+					<button id="conDefinitionAdd" class="btn btn-default"><i class="glyphicon glyphicon-plus-sign" title="新增"></i></button>
+					<button id="conDefinitionDel" class="btn btn-default"><i class="glyphicon glyphicon-remove-circle" title="删除"></i></button>
+				</div>
+				<table id="conDefContent"></table>
+			</div>
+		</div>
+		
+		<div id="conDefinitionAddContent" class="wrapper" style="display: none;">
+			<form>
+				<div class="col-sm-12">
+					<div class="col-sm-12 form-group">
+						<label>情景名称</label>
+						<select class="form-control">
+							<option value="">零售存款的大量流失</option>
+							<option value="">流动性资产价值的侵蚀</option>
+							<option value="">批发性融资来源的可获得性下降</option>
+						</select>
+					</div>
+					<div class="form-group col-sm-12">
+						<label>影响因素</label>
+						<select class="form-control">
+							<option value="">流入减少</option>
+							<option value="">流出增大</option>
+						</select>
+					</div>
+					<div class="form-group col-sm-12">
+						<label>业务种类</label>
+						<select class="form-control">
+							<option value="">个人活期存款</option>
+							<option value="">个人定期存款</option>
+						</select>
+					</div>
+					<div class="form-group col-sm-12">
+						<label>情景数值</label>
+						<input class="form-control" />
+					</div>
+					<div class="form-group col-sm-12">
+						<label>压力持续时间</label>
+						<select class="form-control">
+							<option value="">1天</option>
+							<option value="">7天</option>
+							<option value="">14天</option>
+							<option value="">1个月</option>
+						</select>
+					</div>
+				</div>
+			</form>
+		</div>
+		
+		<div id="pressTestReport" class="wrapper" style="display: none;">
+			<table class="table table-bordered">
+				<tr>
+					<td colspan="2"><label>压力测试名称:</label><span class="index-details">压力测试名称1</span></td>
+					<td colspan="2"><label>币种:</label><span class="index-details">人民币</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><label>数据日期:</label><span class="index-details">2017-07-13</span></td>
+					<td colspan="2"><label>压力测试描述:</label><span class="index-details">压力测试描述内容补充</span></td>
+				</tr>
+				<tr>
+					<td><label>情景名称</label></td>
+					<td><label>影响因素</label></td>
+					<td><label>情景数值</label></td>
+					<td><label>压力持续时间</label></td>
+				</tr>
+				<tr>
+					<td>交易对手的可交易额减少或总交易对手减少</td>
+					<td>流入减少</td>
+					<td>0.1</td>
+					<td>14天</td>
+				</tr>
+			</table>
+			<div class="row">
+				<div id="c_chart1" class="col-xs-5">
+					<table class="table table-bordered">
+						<tr>
+							<td><label>期次</label></td>
+							<td><label>流入</label></td>
+							<td><label>流出</label></td>
+							<td><label>现金流缺口</label></td>
+						</tr>
+						<tr>
+							<td>14天</td>
+							<td>0.00</td>
+							<td>71,883,011.95</td>
+							<td>-71,883,011.95</td>
+						</tr>
+						<tr>
+							<td>1个月</td>
+							<td>0.00</td>
+							<td>243,885,726.67</td>
+							<td>-243,885,726.67</td>
+						</tr>
+						<tr>
+							<td>2个月</td>
+							<td>0.00</td>
+							<td>2,992,849,756.14</td>
+							<td>-2,992,849,756.14</td>
+						</tr>
+						<tr>
+							<td>3个月</td>
+							<td>0.00</td>
+							<td>2,330,354,942.17</td>
+							<td>-2,330,354,942.17</td>
+						</tr>
+						<tr>
+							<td>5个月</td>
+							<td>0.00</td>
+							<td>5,970,864,659.64</td>
+							<td>-5,970,864,659.64</td>
+						</tr>
+						<tr>
+							<td>9个月</td>
+							<td>0.00</td>
+							<td>4,312,858,345.82</td>
+							<td>-4,312,858,345.82</td>
+						</tr>
+						<tr>
+							<td>1年</td>
+							<td>0.00</td>
+							<td>1,433,243,058.62</td>
+							<td>-1,433,243,058.62</td>
+						</tr>
+						<tr>
+							<td>3年</td>
+							<td>0.00</td>
+							<td>1,879,366,097.67</td>
+							<td>-1,879,366,097.67</td>
+						</tr>
+						<tr>
+							<td>5年</td>
+							<td>0.00</td>
+							<td>1,585,317,134.61</td>
+							<td>-1,585,317,134.61</td>
+						</tr>
+						<tr>
+							<td>5年以上</td>
+							<td>0.00</td>
+							<td>12,934,721.76</td>
+							<td>-12,934,721.76</td>
+						</tr>
+					</table>
+				</div>
+				<div id="c_chart2" class="col-xs-7">
+					<p align="center">缺口分布图</p>
+					<canvas id="chart"></canvas>
+				</div>
+			</div>
+		</div>
+		
+		
+		
+		
+		
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/bootstrap-datetimepicker.min.js"></script>
+		<script src="js/bootstrap-datetimepicker.zh-CN.js"></script>
+		<script src="js/jquery.ztree.all.min.js"></script>
+		<script src="js/layer/layer.min.js"></script>
+		<script src="js/Chart.js-2.6.0/dist/Chart.js"></script>
+		<script src="js/bootstrap-table/bootstrap-table.min.js"></script>
+		<script src="js/select2.full.min.js"></script>
+
+		<script src="js/stressTestDefinition.js"></script>
+		<script>
+			$(document).ready(function() {
+				//				initCurrentDate();
+//				initOrgTree();
+				initChart();
+				initTable();
+			});
+		</script>
+	</body>
+
+</html>

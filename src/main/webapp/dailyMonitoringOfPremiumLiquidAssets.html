@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>优质流动性资产每日监测</title>
+		<link href="css/bootstrap.min.css" rel="stylesheet" />
+		<link href="css/font-awesome.min.css" rel="stylesheet" />
+		<link href="css/style.css" rel="stylesheet" />
+		<link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+		<link href="css/zTreeStyle/zTreeStyle.css" rel="stylesheet" />
+		<link href="css/bootstrap-table/bootstrap-table.min.css" />
+		<link href="css/select2.min.css" rel="stylesheet" />
+	</head>
+	<body class="panel-body" style="padding-bottom:0px;">
+		<div class="row">
+			<div class="col-lg-12">
+					<ol class="breadcrumb">
+					<li>
+						<a href="index2.html">首页</a>
+					</li>
+					<li>
+						<a href="#">优质流动性资产管理</a>
+					</li>
+					<li>
+						<a href="premiumLiquidityAssetDefinition.html">优质流动性资产每日监测</a>
+					</li>
+				</ol>
+			</div>
+		</div>	
+		<div class="row">
+ 			<!--<div class="col-xs-4">-->
+ 				<!--<button id="assetsAdd" class="btn btn-default"><i class="glyphicon glyphicon-plus-sign" title="新增"></i></button>-->
+ 				<!--<button id="btn_del" class="btn btn-default"><i class="glyphicon glyphicon-remove-circle" title="删除"></i></button>-->
+ 			<!--</div>-->
+ 			<div class="col-xs-12 text-right">
+				<div class="form-inline">
+					<div class="form-group">
+						<input id="iptSearch" type="text" placeholder="资产类别/名称" style="width: 200px;" class="form-control">
+					</div>
+					<button id="search" class="btn btn-default search"><i class="fa fa-search"></i></button>
+					<button id="reset" class="btn btn-default search"><i class="glyphicon glyphicon-refresh"></i></button>
+					<button id="export" class="btn btn-default search"><i class="glyphicon glyphicon-export"></i></button>
+				</div>
+			</div>
+ 		</div><br />
+		<table id="table"></table>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/bootstrap-datetimepicker.min.js"></script>
+		<script src="js/bootstrap-datetimepicker.zh-CN.js"></script>
+		<script src="js/jquery.ztree.all.min.js"></script>
+		<script src="js/layer/layer.min.js"></script>
+		<script src="js/Chart.js-2.6.0/dist/Chart.js"></script>
+		<script src="js/bootstrap-table/bootstrap-table.min.js"></script>
+		<script src="js/select2.full.min.js"></script>
+
+		<script src="js/dailyMonitoringOfPremiumLiquidAssets.js"></script>
+		<script>
+			$(document).ready(function() {
+				//				initCurrentDate();
+//				initOrgTree();
+//				initChart();
+				initTable();
+			});
+		</script>
+	</body>
+</html>

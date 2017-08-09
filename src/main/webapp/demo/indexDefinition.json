@@ -1,0 +1,72 @@
+[
+	{
+		"indexType": "机构类指标",
+		"indexId": "Z0001",
+		"indexName": "流动性比例",
+		"indexClass": "",
+		"stauts":"正常"
+	},
+	{
+		"indexType": "机构类指标",
+		"indexId": "Z0002",
+		"indexName": "存贷比",
+		"indexClass": "",
+		"stauts":"正常"
+	},
+	{
+		"indexType": "机构类指标",
+		"indexId": "Z0003",
+		"indexName": "核心负债比例",
+		"indexClass": "",
+		"stauts":"正常"
+	},
+	{
+		"indexType": "机构类指标",
+		"indexId": "Z0004",
+		"indexName": "流动性缺口率",
+		"indexClass": "",
+		"stauts":"正常"
+	},
+	{
+		"indexType": "机构类指标",
+		"indexId": "Z0005",
+		"indexName": "最大十家存款客户存款比例",
+		"indexClass": "",
+		"stauts":"正常"
+	},
+	{
+		"indexType": "机构类指标",
+		"indexId": "Z0006",
+		"indexName": "同业市场负债比例",
+		"indexClass": "",
+		"stauts":"正常"
+	},
+	{
+		"indexType": "机构类指标",
+		"indexId": "Z0007",
+		"indexName": "最大十家同业融入比例",
+		"indexClass": "",
+		"stauts":"正常"
+	},
+	{
+		"indexType": "机构类指标",
+		"indexId": "Z0008",
+		"indexName": "流动性覆盖率",
+		"indexClass": "",
+		"stauts":"正常"
+	},
+	{
+		"indexType": "机构类指标",
+		"indexId": "Z0009",
+		"indexName": "净稳定资金比例",
+		"indexClass": "",
+		"stauts":"正常"
+	},
+	{
+		"indexType": "机构类指标",
+		"indexId": "Z0010",
+		"indexName": "超额备付金率",
+		"indexClass": "",
+		"stauts":"正常"
+	}
+]

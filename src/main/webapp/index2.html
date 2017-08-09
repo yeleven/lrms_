@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>主页</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="css/index/normalize.css"/>
+    <link rel="stylesheet" type="text/css" href="css/index/demo.css"/>
+    <link rel="stylesheet" type="text/css" href="css/index/component2.css"/>
+    <script src="js/index/modernizr-2.6.2.min.js"></script>
+</head>
+
+<body>
+<div class="container">
+    <header>
+        <h1>流动性风险管理系统 <span>Liquidity risk management system</span></h1>
+        <!--<nav class="codrops-demos">
+            <a href="index.html">Demo 1</a>
+            <a class="current-demo" href="index2.html">Demo 2</a>
+        </nav>-->
+    </header>
+    <div class="component">
+        <h2>TIAN JIAN JIN GUAN</h2>
+        <!-- Start Nav Structure -->
+        <button class="cn-button" id="cn-button">Close</button>
+        <div class="cn-wrapper opened-nav" id="cn-wrapper">
+            <ul>
+                <li><a href="staticCashFlowGapStatistics.html"><span>流动性管理<br/>报表</span></a></li>
+                <li><a href="productAnalysis.html"><span>产品分析</span></a></li>
+                <li><a href="#" onclick="indexChoice()"><span>指标管理</span></a></li>
+                <li><a href="#"><span>监管报表</span></a></li>
+                <li><a href="#" onclick="qualityLiquidAssetsChoice()"><span>优质流动性<br/>资产管理</span></a></li>
+                <li><a href="#" onclick="liquidityRiskPressureTest()"><span>流动性风险<br/>压力测试</span></a></li>
+                <li><a href="#" onclick="yieldCurve()"><span>收益率曲线</span></a></li>
+                <!--<li><a href="#"><span>报表口径管理</span></a></li>-->
+                <!--<li><a href="#"><span>账户册配置</span></a></li>-->
+                <!--<li><a href="#"><span>系统配置</span></a></li>-->
+                <!--<li><a href="#"><span>系统管理</span></a></li>-->
+            </ul>
+        </div>
+        <!-- End of Nav Structure -->
+        <!--<div class="row">
+            <div class="col-sm-20 text-center" style="margin-left: 170px;">
+                <a href="staticCashFlowGapStatistics.html">
+                    <div class="col-sm-1" style="height: 210px; background:#4CAE4C;">
+                        <div class="fontStyle" style="margin-top: 50px;">流动性管理报表</div>
+                    </div>
+                </a>
+                <a href="productAnalysis.html">
+                    <div class="col-sm-1" style="height: 210px; background:#009F95;">
+                        <div class="fontStyle" style="margin-top: 50px;">产品分析</div>
+                    </div>
+                </a>
+                <a href="#" onclick="indexChoice()">
+                    <div class="col-sm-1" style="height: 210px; background:#67B168;">
+                        <div class="fontStyle" style="margin-top: 50px;">指标管理</div>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="col-sm-1" style="height: 210px; background:#8A6D3B;">
+                        <div class="fontStyle" style="margin-top: 50px;">监管报表</div>
+                    </div>
+                </a>
+                <a href="#" onclick="qualityLiquidAssetsChoice()">
+                    <div class="col-sm-1" style="height: 210px; background:#009F95;">
+                        <div class="fontStyle" style="margin-top: 50px;">优质流动性资产管理</div>
+                    </div>
+                </a>
+                <a href="#" onclick="liquidityRiskPressureTest()">
+                    <div class="col-sm-1" style="height: 210px; background:#8C8C8C;">
+                        <div class="fontStyle" style="margin-top: 50px;">流动性风险压力测试</div>
+                    </div>
+                </a>
+                <a href="#" onclick="yieldCurve()">
+                    <div class="col-sm-1" style="height: 210px; background:#761C19;">
+                        <div class="fontStyle" style="margin-top: 50px;">收益率曲线</div>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="col-sm-1" style="height: 210px; background:#985F0D;">
+                        <div class="fontStyle" style="margin-top: 50px;">报表口径管理</div>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="col-sm-1" style="height: 210px; background:#31B0D5;">
+                        <div class="fontStyle" style="margin-top: 50px;">账户册配置</div>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="col-sm-1" style="height: 210px; background:#555555;">
+                        <div class="fontStyle" style="margin-top: 50px;">系统配置</div>
+                    </div>
+                </a>
+            </div>
+
+        </div>-->
+    </div>
+    <section>
+        <p>
+            金融危机爆发后，我国对流动性风险管理日益重视。为加强商业银行流动性风险管理、维护商业银行安全稳健运行，银监会于2009年发布了相关指引，指导与监管商业银行流动性风险管理体系的建设。从商业银行自身角度来看，面对日益复杂的市场环境以及日渐激烈的银行同业竞争，商业银行必须要建立稳健且完善的流动性风险管理体系。因此，研究商业银行流动性风险管理系统建设具有重要的战略意义</p>
+        <p>After the outbreak of the financial crisis,China puts more and more emphasis on liquidity risk management.In
+            order to strengthen commercial banks' liquidity risk management and maintain a safe and stable operation of
+            commercial banks,China Banking
+            Regulatory Commission(CRBC) issued relevant guidelines to guide and supervise the construction of liquidity
+            risk management system of commercial banks in 2009.From the perspective of commercial banks themselves,in
+            the face of growing complex market
+            environment and increasingly fierce competition in the banking industry, commercial banks should establish a
+            robust and sound liquidity risk management system.The research on the establishment of commercial banks'
+            liquidity risk management system
+            has important strategic significance.</p>
+        <!--<p>Collard greens ricebean horseradish wattle seed chard epazote potato peanut gram earthnut pea spinach yarrow desert raisin salad mung bean summer purslane fennel. Water spinach celery cucumber grape cauliflower nori daikon sweet pepper endive lentil turnip greens catsear leek beet greens. Melon seakale parsnip soybean bamboo shoot fennel scallion. Coriander groundnut squash corn aubergine bitterleaf azuki bean dandelion courgette broccoli rabe. Chickweed salsify chickweed groundnut nori okra lentil water spinach rock melon broccoli. Soko leek tomatillo quandong winter purslane caulie jícama daikon dandelion bush tomato. Daikon cress amaranth leek cabbage black-eyed pea kakadu plum scallion watercress garbanzo gram caulie welsh onion water spinach tomatillo groundnut desert raisin. Wakame salsify bunya nuts spring onion lotus root prairie turnip fennel onion dandelion black-eyed pea bok choy zucchini taro. Jícama collard greens amaranth bell pepper catsear brussels sprout sweet pepper daikon spring onion aubergine broccoli rabe quandong mustard celery corn groundnut peanut. Mung bean fennel eggplant water spinach bunya nuts sierra leone bologi epazote okra caulie groundnut black-eyed pea parsnip fava bean squash.</p>
+        <p>Parsnip tomatillo swiss chard garbanzo gourd potato silver beet. Celery swiss chard melon zucchini arugula pea quandong beet greens radish artichoke black-eyed pea endive winter purslane horseradish garlic amaranth collard greens chickpea. Rock melon pumpkin collard greens celery broccoli rabe endive nori brussels sprout gourd courgette sea lettuce artichoke desert raisin coriander chard.</p>
+        <p>Collard greens ricebean horseradish wattle seed chard epazote potato peanut gram earthnut pea spinach yarrow desert raisin salad mung bean summer purslane fennel. Water spinach celery cucumber grape cauliflower nori daikon sweet pepper endive lentil turnip greens catsear leek beet greens. Melon seakale parsnip soybean bamboo shoot fennel scallion. Coriander groundnut squash corn aubergine bitterleaf azuki bean dandelion courgette broccoli rabe. Chickweed salsify chickweed groundnut nori okra lentil water spinach rock melon broccoli.</p>-->
+    </section>
+</div>
+<!-- /container -->
+<!-- footer -->
+<div style="text-align:center;clear:both">
+    <p>Copyright &copy; 重庆天健金管科技服务有限公司 ALL rights reserved</p>
+    <p>重庆市渝中区人和街74号12楼</p>
+</div>
+<!-- /footer -->
+
+<!-- pop up -->
+<div id="indexChoice" style="background-color: #52be7f; display: none;">
+    <header>
+        <nav class="codrops-demos">
+            <a href="indexDefinition.html">指标定义</a>
+            <a href="indexAnalysis.html">指标分析</a>
+        </nav>
+    </header>
+</div>
+<div id="qualityLiquidAssetsChoice" style="background-color: #52be7f; display: none;">
+    <header>
+        <nav class="codrops-demos">
+            <a href="premiumLiquidityAssetDefinition.html">优质流动性资产定义</a>
+            <a href="dailyMonitoringOfPremiumLiquidAssets.html">优质流动性资产每日监测</a>
+            <a href="measurementOfPremiumLiquidAssets.html">优质流动性资产测算</a>
+        </nav>
+    </header>
+</div>
+<div id="liquidityRiskPressureTest" style="background-color: #52be7f;display: none;">
+    <header>
+        <nav class="codrops-demos">
+            <a href="G21LiquidityGapPressureTest.html">G21流动性缺口压力测试</a>
+            <a href="stressScenarios.html">压力情景预设</a>
+            <a href="stressTestDefinition.html">压力测试定义</a>
+        </nav>
+    </header>
+</div>
+<div id="yieldCurve" style="background-color: #52be7f;display: none;">
+    <header>
+        <nav class="codrops-demos">
+            <a href="yieldCurveDef.html">收益率曲线定义</a>
+            <a href="yieldCurveDataMaintenance.html">收益率曲线数据维护</a>
+        </nav>
+    </header>
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/index/polyfills.js"></script>
+<script src="js/index/demo2.js"></script>
+<script src="js/layer/layer.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>

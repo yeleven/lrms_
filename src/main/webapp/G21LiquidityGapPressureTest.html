@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>G21流动性缺口压力测试</title>
+		<link href="css/bootstrap.min.css" rel="stylesheet" />
+		<link href="css/font-awesome.min.css" rel="stylesheet" />
+		<link href="css/style.css" rel="stylesheet" />
+		<link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+		<link href="css/zTreeStyle/zTreeStyle.css" rel="stylesheet" />
+		<link href="css/bootstrap-table/bootstrap-table.min.css" />
+		<link href="css/select2.min.css" rel="stylesheet" />
+		<style type="text/css">
+			td{
+				text-align: center;
+				vertical-align: middle;
+			}
+		</style>
+	</head>
+	<body class="panel-body" style="padding-bottom:0px;">
+		<div class="row">
+			<div class="col-lg-12">
+				<ol class="breadcrumb">
+					<li>
+						<a href="index2.html">首页</a>
+					</li>
+					<li>
+						<a href="#">流动性风险压力测试</a>
+					</li>
+					<li>
+						<a href="G21LiquidityGapPressureTest.html">G21流动性缺口压力测试</a>
+					</li>
+				</ol>
+			</div>
+		</div><hr />
+		<div class="row">
+ 			<div class="col-xs-4">
+ 				<button id="pressTestAdd" class="btn btn-default"><i class="glyphicon glyphicon-plus-sign" title="新增"></i></button>
+ 				<!--<button id="btn_del" class="btn btn-default"><i class="glyphicon glyphicon-remove-circle" title="删除"></i></button>-->
+ 			</div>
+ 			<div class="col-xs-8 text-right">
+				<div class="form-inline">
+					<div class="form-group">
+						<input id="iptSearch" type="text" placeholder="请输入压力测试名称" style="width: 200px;" class="form-control">
+					</div>
+					<button id="search" class="btn btn-default search"><i class="fa fa-search"></i></button>
+					<button id="reset" class="btn btn-default search"><i class="glyphicon glyphicon-refresh"></i></button>
+					<!--<button id="export" class="btn btn-default search"><i class="glyphicon glyphicon-export"></i></button>-->
+				</div>
+			</div>
+ 		</div><br />
+		<table id="table"></table>
+		
+		<div style="display: none;"></div>
+		
+		<!--for pop up-->
+		<div  class="wrapper" id="pressureTestContent" style="display:none;width:100%;margin:1px;">
+			<form>
+				<div class="col-sm-12">
+					<div class="form-group col-sm-6">
+						<label>压力测试名称</label> 
+						<input class="form-control" />
+					</div>
+					<div class="form-group col-sm-6">
+						<label>报表期次</label> 
+						<select class="form-control">
+							<option value="">201001</option>
+							<option value="">201002</option>
+							<option value="">201003</option>
+							<option value="">201004</option>
+						</select>
+					</div>
+				</div>
+				<div class="col-sm-12">
+					<div class="col-sm-5">
+						<label>机构</label> 
+						<input id="orgName" class="form-control" readonly/>
+					</div>
+					<div class="col-sm-1" style="margin: 25px 0px 20px -32px;">
+						<span class="input-group-btn"> 
+					        	<button type="button" class="btn btn-picker" id="orgLoad"><i class="fa fa-tree"></i></button> 
+					    </span>
+					</div>
+				</div>
+				<div class="col-sm-12">
+					<div class="form-group col-sm-6">
+						<label>发起人</label> 
+						<input class="form-control" value="yeqc" readonly/>
+					</div>
+					<div class="form-group col-sm-6">
+						<label>发起时间</label> 
+						<input class="form-control" value="2017-07-13" readonly/>
+					</div>
+				</div>
+				<div class="col-sm-12">
+					<div class="form-group col-sm-12">
+						<label>描述</label> 
+						<textarea class="form-control"></textarea>
+					</div>
+				</div>
+				<div class="col-sm-12">
+					<div class="col-sm-4">
+						<button type="button" id="conditionSettings">情景设置</button>
+					</div>
+				</div>
+				
+ 			</form>
+		</div>
+		<div id="treeContent" style="display:none;">
+			<ul id="tree" class="ztree"></ul>
+		</div>
+		
+		<div id="conditionSettingsContent" class="panel-body" style="padding-bottom:0px; display: none;">
+			<div class="row">
+	 			<div class="col-xs-4">
+	 				<button id="conditionSettingsAdd" class="btn btn-default"><i class="glyphicon glyphicon-plus-sign" title="新增"></i></button>
+	 				<button id="conditionSettingsDelete" class="btn btn-default"><i class="glyphicon glyphicon-remove-circle" title="删除"></i></button>
+	 			</div>
+ 			</div><br />
+ 			<table id="conditionSettingsTable"></table>
+		</div>
+		
+		<div class="wrapper" id="conditionSettingsAddContent" style="display: none;width:100%;margin:1px;">
+			<form>
+				<div class="col-sm-12">
+					<div class="form-group col-sm-12">
+						<label>情景描述</label> 
+						<input class="form-control" />
+					</div>
+				</div>
+				<div class="col-sm-12">
+					<div class="form-group col-sm-4">
+						<label>轻度</label> 
+						<input class="form-control " />
+					</div>
+					<div class="form-group col-sm-4">
+						<label>中度</label> 
+						<input class="form-control" />
+					</div>
+					<div class="form-group col-sm-4">
+						<label>重度</label> 
+						<input class="form-control" />
+					</div>
+				</div>
+				<div class="col-sm-12">
+					<div class="form-group col-sm-12">
+						<label>报表项目行次</label> 
+						<select class="form-control">
+							<option value="">line1</option>
+							<option value="">line2</option>
+							<option value="">line3</option>
+						</select>
+					</div>
+				</div>
+				<div class="col-sm-12">
+					<div class="form-group col-sm-12">
+						<label>报表项目列次</label> 
+						<select class="form-control">
+							<option value="">col1</option>
+							<option value="">col2</option>
+							<option value="">col3</option>
+						</select>
+					</div>
+				</div>
+			</form>
+		</div>
+		
+		<div class="wrapper" id="testReport" style="display: none;width: 100%;margin: 0px;">
+			<table class="table table-bordered">
+				<tr>
+					<td colspan="4"><label>报送口径:</label><span class="index-details">境内</span></td>
+					<td colspan="4"><label>报表日期:</label><span class="index-details">2017年07月</span></td>
+					<td colspan="3"><label>货币单位:</label><span class="index-details">万元</span></td>
+				</tr>
+				<tr>
+					<td rowspan="3" colspan="2"><label>项目</label></td>
+					<td>A</td>
+					<td>B</td>
+					<td>C</td>
+					<td>D</td>
+					<td>E</td>
+					<td>F</td>
+					<td>G</td>
+					<td>H</td>
+					<td>I</td>
+				</tr>
+				<tr>
+					<td colspan="6">剩余期限</td>
+					<td rowspan="2">未定期限</td>
+					<td rowspan="2">逾期</td>
+					<td rowspan="2">总计</td>
+				</tr>
+				<tr>
+					<td>次日</td>
+					<td>2日至7日</td>
+					<td>8日至30日</td>
+					<td>31日至90日</td>
+					<td>91日至一年</td>
+					<td>1年以上</td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>1.资产总计</td>
+					<td>573,863.65</td>
+					<td>583,217.26</td>
+					<td>3,033,027.55</td>
+					<td>4,918,936.11</td>
+					<td>13,281,348.56</td>
+					<td>22,547,605.19</td>
+					<td>#REF!</td>
+					<td>273,186.63</td>
+					<td>#REF!</td>
+				</tr>
+				<tr>
+					<td>6</td>
+					<td>1.5买入反售资</td>
+					<td>95,682.00</td>
+					<td>0.00</td>
+					<td>671,439.30</td>
+					<td>844,598.22</td>
+					<td>2,092,028.19</td>
+					<td>1,280,807.07</td>
+					<td></td>
+					<td>0.00</td>
+					<td>4,930,554.78</td>
+				</tr>
+				<tr>
+					<td>7</td>
+					<td>1.6各项贷款</td>
+					<td>478,181.65</td>
+					<td>131,096.56</td>
+					<td>1,068,851.56</td>
+					<td>2,246,795.94</td>
+					<td>7,820,522.96</td>
+					<td>12,297,561.27</td>
+					<td></td>
+					<td>273,186.63</td>
+					<td>24,496,196.57</td>
+				</tr>
+				<tr>
+					<td>8</td>
+					<td>1.7债券投资和</td>
+					<td>0.00</td>
+					<td>452,120,70</td>
+					<td>1,346,736.69</td>
+					<td>1,647,541.95</td>
+					<td>3,368,797.41</td>
+					<td>8,969,236.85</td>
+					<td></td>
+					<td>0.00</td>
+					<td>15,784,433.60</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>轻度</td>
+					<td>93.00</td>
+					<td>435,456.00</td>
+					<td>45,455.00</td>
+					<td>765.00</td>
+					<td>987.00</td>
+					<td>9,876.00</td>
+					<td>98.00</td>
+					<td>32.00</td>
+					<td>44,356.00</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>中度</td>
+					<td>93.00</td>
+					<td>435,456.00</td>
+					<td>45,455.00</td>
+					<td>765.00</td>
+					<td>987.00</td>
+					<td>9,876.00</td>
+					<td>98.00</td>
+					<td>32.00</td>
+					<td>44,356.00</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>重度</td>
+					<td>93.00</td>
+					<td>435,456.00</td>
+					<td>45,455.00</td>
+					<td>765.00</td>
+					<td>987.00</td>
+					<td>9,876.00</td>
+					<td>98.00</td>
+					<td>32.00</td>
+					<td>44,356.00</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>...</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>28</td>
+					<td>5.到期期限缺口</td>
+					<td>234.00</td>
+					<td>987.00</td>
+					<td>6,565.00</td>
+					<td>9,898.00</td>
+					<td>676.00</td>
+					<td>787.00</td>
+					<td>789.00</td>
+					<td>99.00</td>
+					<td>6,789.00</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>轻度</td>
+					<td>234.00</td>
+					<td>987.00</td>
+					<td>6,565.00</td>
+					<td>9,898.00</td>
+					<td>676.00</td>
+					<td>787.00</td>
+					<td>789.00</td>
+					<td>99.00</td>
+					<td>6,789.00</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>中度</td>
+					<td>234.00</td>
+					<td>987.00</td>
+					<td>6,565.00</td>
+					<td>9,898.00</td>
+					<td>676.00</td>
+					<td>787.00</td>
+					<td>789.00</td>
+					<td>99.00</td>
+					<td>6,789.00</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>重度</td>
+					<td>234.00</td>
+					<td>987.00</td>
+					<td>6,565.00</td>
+					<td>9,898.00</td>
+					<td>676.00</td>
+					<td>787.00</td>
+					<td>789.00</td>
+					<td>99.00</td>
+					<td>6,789.00</td>
+				</tr>
+			</table>
+		</div>
+		<!--/for pop up-->
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/bootstrap-datetimepicker.min.js"></script>
+		<script src="js/bootstrap-datetimepicker.zh-CN.js"></script>
+		<script src="js/jquery.ztree.all.min.js"></script>
+		<script src="js/layer/layer.min.js"></script>
+		<script src="js/Chart.js-2.6.0/dist/Chart.js"></script>
+		<script src="js/bootstrap-table/bootstrap-table.min.js"></script>
+		<script src="js/select2.full.min.js"></script>
+
+		<script src="js/G21LiquidityGapPressureTest.js"></script>
+		<script>
+			$(document).ready(function() {
+				//				initCurrentDate();
+				initOrgTree();
+//				initChart();
+				initTable();
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>产品分析</title>
+		<link href="css/bootstrap.min.css" rel="stylesheet" />
+		<link href="css/font-awesome.min.css" rel="stylesheet" />
+		<link href="css/style.css" rel="stylesheet" />
+		<link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+		<link href="css/zTreeStyle/zTreeStyle.css" rel="stylesheet" />
+		<link href="css/bootstrap-table/bootstrap-table.min.css" />
+	</head>
+
+	<body class="panel-body" style="padding-bottom:0px;">
+		<div class="row">
+			<div class="col-lg-12">
+					<ol class="breadcrumb">
+					<li>
+						<a href="index2.html">首页</a>
+					</li>
+					<li>
+						<a href="productAnalysis.html">产品分析</a>
+					</li>
+				</ol>
+			</div>
+		</div>
+		<!--header-->
+		<form>
+			<div class="row">
+				<div class="col-lg-12 text-right">
+					<div class="form-inline">
+						<span class="form-group">
+							<!--<label>流入/流出</label>-->
+							<select class="input-select" id="inOrOut">
+								<option value="">流入/流出选择</option>
+								<option value="">流入</option>
+								<option value="">流出</option>
+							</select>
+						<span>
+						<span class="form-group">
+							<!--<label>机构</label>-->
+							<input type="hidden" id="orgId"/>
+							<input type="text" class="form-control" id="orgName" placeholder="机构选择" readonly>
+							<span style="margin-left: -38px;"> 
+					        		<button type="button" class="btn btn-picker" id="orgLoad"><i class="fa fa-tree"></i></button> 
+					        	</span>
+					    </span>
+					    <span class="form-group">
+					    		<!--<label>产品</label>-->
+							<select class="input-select" id="product">
+								<option value="">产品选择</option>
+								<option value="">存款产品A</option>
+								<option value="">存款产品B</option>
+								<option value="">贷款产品A</option>
+								<option value="">贷款产品B</option>
+								<option value="">贷款产品C</option>
+							</select>
+					    </span>
+					    <span class="form-group" style="margin-right: 130px;">
+					    		<!--<label>期限结构</label>-->
+							<select class="input-select" id="termStructure">
+								<option value="">期限结构选择</option>
+								<option value="">1天</option>
+								<option value="">7天</option>
+								<option value="">三个月</option>
+								<option value="">六个月</option>
+								<option value="">一年</option>
+								<option value="">三年</option>
+								<option value="">五年</option>
+							</select>
+					    </span>
+					 </div>
+				</div>
+			</div><br />
+			<div class="row">
+				<div class="col-lg-12 text-right">
+					<div class="form-inline">
+						<span class="form-group">
+							<!--<label>查询日期</label>-->
+							<input type="text" class="form-control" id="datePicker1" placeholder="选择查询日期" readonly>
+						</span>
+						<span class="form-group">
+							<!--<label>对比日期</label>-->
+							<input type="text" class="form-control" id="datePicker2" placeholder="选择对比日期" readonly>
+						</span>
+						<span class="form-group">
+							<!--<label>单位</label>-->
+							<select class="input-select" id="termStructure">
+								<option value="">单位选择</option>
+								<option value="">亿元</option>
+								<option value="">万元</option>
+							</select>
+						</span>
+						<span class="form-group">
+							<!--<label>币种</label>-->
+							<select class="input-select" id="termStructure">
+								<option value="">币种选择</option>
+								<option value="">本外币合计</option>
+								<option value="">本币</option>
+								<option value="">美元</option>
+								<option value="">港币</option>
+								<option value="">外币折人民币</option>
+							</select>
+						</span>
+						<span>
+							<a id="search" type="submit" class="btn btn-default"><i class="fa fa-search" title="开始搜索"></i></a>
+							<a id="reset" class="btn btn-default"><i class="glyphicon glyphicon-refresh" title="重置"></i></a>
+							<a class="btn btn-default"><i class="glyphicon glyphicon-export" title="导出Excel"></i></a>
+						</span>
+					</div>
+				</div>
+			</div><br />
+			<!--<div class="row">
+				<div class="col-lg-12 text-right">
+					<a id="search" type="submit" class="btn btn-default"><i class="fa fa-search" title="开始搜索"></i></a>
+					<a id="reset" class="btn btn-default"><i class="glyphicon glyphicon-refresh" title="重置"></i></a>
+					<a class="btn btn-default"><i class="glyphicon glyphicon-export" title="导出Excel"></i></a>
+				</div>
+			</div>-->
+
+					
+
+		</form>
+		<br />
+		
+		<div id="tableContent" style="display: none;">
+			<!--for table-->
+			<table id="table"></table>
+		</div>
+		<div id="chartContent" class="col-xs-6" style="display: none;">
+			<p align="center">最近30日对应期限余额情况</p>
+			<canvas id="chart"></canvas>
+		</div>
+		
+		
+		<!--for pop up-->
+		<div id="treeContent" style="display:none;">
+			<ul id="tree" class="ztree"></ul>
+		</div>
+		
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/bootstrap-datetimepicker.min.js"></script>
+		<script src="js/bootstrap-datetimepicker.zh-CN.js"></script>
+		<script src="js/jquery.ztree.all.min.js"></script>
+		<script src="js/layer/layer.min.js"></script>
+		<script src="js/Chart.js-2.6.0/dist/Chart.js"></script>
+		<script src="js/bootstrap-table/bootstrap-table.min.js"></script>
+
+		<script src="js/productAnalysis.js"></script>
+		<script>
+			$(document).ready(function() {
+				initOrgTree();
+//				initCurrentDate();
+				initTable();
+				initChart();
+			});
+		</script>
+	</body>
+
+</html>

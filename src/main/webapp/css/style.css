@@ -1,0 +1,17 @@
+.btn-picker {
+	height: 34px;
+}
+.input-select {
+	width: 172px;
+	height: 34px;
+    
+}
+.index-details {
+	padding: 20px;
+}
+.dashLine {
+	margin-top: 1px;
+	margin-bottom: 1px;
+	border: 0;
+	border-top: 2px dashed #eee;
+}

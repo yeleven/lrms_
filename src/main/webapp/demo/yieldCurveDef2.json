@@ -1,0 +1,52 @@
+[
+	{
+		"mainPointCode": "7D",
+		"mainPointName": "7天",
+		"term": "0.122",
+		"speed": "x",
+		"market":"x",
+		"dayCount":"30/360",
+		"interestDateAdjustment":"下一营业日",
+		"interestAdjustment":"调整"
+	},
+	{
+		"mainPointCode": "7D",
+		"mainPointName": "7天",
+		"term": "0.22",
+		"speed": "x",
+		"market":"x",
+		"dayCount":"实际天数/实际天数(A/A)",
+		"interestDateAdjustment":"上一营业日",
+		"interestAdjustment":"不调整"
+	},
+	{
+		"mainPointCode": "2W",
+		"mainPointName": "2周",
+		"term": "0.122",
+		"speed": "x",
+		"market":"x",
+		"dayCount":"30/360",
+		"interestDateAdjustment":"下一营业日",
+		"interestAdjustment":"调整"
+	},
+	{
+		"mainPointCode": "3M",
+		"mainPointName": "3个月",
+		"term": "0.41",
+		"speed": "x",
+		"market":"x",
+		"dayCount":"实际天数/356(A/356)",
+		"interestDateAdjustment":"上一营业日",
+		"interestAdjustment":"不调整"
+	},
+	{
+		"mainPointCode": "5Y",
+		"mainPointName": "5年",
+		"term": "0.122",
+		"speed": "x",
+		"market":"x",
+		"dayCount":"30/360",
+		"interestDateAdjustment":"下一营业日",
+		"interestAdjustment":"调整"
+	}
+]

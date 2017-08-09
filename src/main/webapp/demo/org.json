@@ -1,0 +1,9 @@
+[
+    {"id":"1", "pId":"0", "name": "重庆天健金管科技总行","icon":"./img/org.png"},
+	{"id":"11", "pId":"1", "name": "渝中分行","icon":"./img/org.png"},
+	{"id":"12", "pId":"1", "name": "江北分行","icon":"./img/org.png"},
+	{"id":"13", "pId":"1", "name": "渝北分行","icon":"./img/org.png"},
+	{"id":"1101", "pId":"11", "name": "大溪沟支行","icon":"./img/org.png"},
+	{"id":"1102", "pId":"11", "name": "人民路支行","icon":"./img/org.png"},
+	{"id":"1103", "pId":"11", "name": "大礼堂支行","icon":"./img/org.png"}
+]

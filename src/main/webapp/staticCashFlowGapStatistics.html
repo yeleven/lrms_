@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <title>流动性管理报表</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="css/style.css" rel="stylesheet"/>
+    <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet"/>
+    <link href="css/zTreeStyle/zTreeStyle.css" rel="stylesheet"/>
+    <link href="css/bootstrap-table/bootstrap-table.min.css"/>
+</head>
+
+<body class="panel-body" style="padding-bottom:0px;">
+<div class="row">
+    <div class="col-lg-12">
+        <ol class="breadcrumb">
+            <li>
+                <a href="index2.html">首页</a>
+            </li>
+            <li>
+                <a href="staticCashFlowGapStatistics.html">流动性管理报表</a>
+            </li>
+        </ol>
+    </div>
+</div>
+<!--header-->
+<div class="row">
+    <div class="col-xs-12 text-right">
+        <form class="form-inline">
+            <!--<label>机构</label>-->
+            <div class="form-group">
+                <div class="input-group">
+                    <input type="hidden" id="orgId"/>
+                    <input type="text" class="form-control" id="orgName" placeholder="机构选择" readonly>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-picker" id="orgLoad"><i class="fa fa-tree"></i></button>
+                    </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <!--<label>统计类型</label>-->
+                <select class="input-select" id="statisticalType">
+                    <option value="static">选择统计类型</option>
+                    <option value="static">静态现金流缺口</option>
+                    <option value="dynamic">动态现金流缺口</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>日期</label>
+                <input type="text" class="form-control" id="datePicker" readonly>
+            </div>
+
+            <a id="search" type="submit" class="btn btn-default search"><i class="fa fa-search" title="开始搜索"></i></a>
+            <a id="reset" class="btn btn-default"><i class="glyphicon glyphicon-refresh" title="重置"></i></a>
+            <a class="btn btn-default"><i class="glyphicon glyphicon-export" title="导出Excel"></i></a>
+        </form>
+    </div>
+</div>
+<br/>
+<!--for search-->
+<div id="chartContent" style="display: none;">
+    <!--for chart-->
+    <div class="row">
+        <div id="c_chart1" class="col-xs-4">
+            <p align="center">按人民币统计(金额:百万)</p>
+            <canvas id="chart1"></canvas>
+        </div>
+        <div id="c_chart2" class="col-xs-4">
+            <p align="center">按美元统计(金额:百万)</p>
+            <canvas id="chart2"></canvas>
+        </div>
+        <div id="c_chart3" class="col-xs-4">
+            <p align="center">按本外币统计(金额:百万)</p>
+            <canvas id="chart3"></canvas>
+        </div>
+    </div>
+    <br/>
+    <!--for table-->
+    <div id="tableContent1">
+        <p>现金流按人民币统计(百万)</p>
+        <table id="table1"></table>
+    </div>
+    <br/>
+    <div id="tableContent2">
+        <p>现金流按美元统计(百万)</p>
+        <table id="table2"></table>
+    </div>
+    <br/>
+    <div id="tableContent3">
+        <p>现金流按本外币统计(百万)</p>
+        <table id="table3"></table>
+    </div>
+</div>
+<!--for pop up-->
+<div id="treeContent" style="display:none;">
+    <ul id="tree" class="ztree"></ul>
+</div>
+
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap-datetimepicker.min.js"></script>
+<script src="js/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="js/jquery.ztree.all.min.js"></script>
+<script src="js/layer/layer.min.js"></script>
+<script src="js/Chart.js-2.6.0/dist/Chart.js"></script>
+<script src="js/bootstrap-table/bootstrap-table.min.js"></script>
+
+<script src="js/staticCashFlowGapStatistics.js"></script>
+<script>
+    $(document).ready(function () {
+        initCurrentDate();
+        initOrgTree();
+        initChart();
+        initTable();
+    });
+</script>
+</body>
+
+</html>

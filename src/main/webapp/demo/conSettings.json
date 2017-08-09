@@ -1,0 +1,15 @@
+[
+	{
+		"conName": "零售存款的大量流失",
+		"influenceFactor": "流出增大",
+		"businessCategory": "个人活期存款",
+		"conValue": "0.100000",
+		"pressureDuration": "14天"
+	},{
+		"conName": "零售存款的大量流失",
+		"influenceFactor": "流出增大",
+		"businessCategory": "个人定期存款",
+		"conValue": "0.200000",
+		"pressureDuration": "14天"
+	}
+]

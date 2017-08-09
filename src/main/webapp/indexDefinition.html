@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>指标定义</title>
+		<link href="css/bootstrap.min.css" rel="stylesheet" />
+		<link href="css/font-awesome.min.css" rel="stylesheet" />
+		<link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+		<link href="css/zTreeStyle/zTreeStyle.css" rel="stylesheet" />
+		<link href="css/bootstrap-table/bootstrap-table.min.css" />
+		<link href="css/style.css" rel="stylesheet" />
+	</head>
+
+	<body class="panel-body" style="padding-bottom:0px;">
+		<div class="row">
+			<div class="col-lg-12">
+					<ol class="breadcrumb">
+					<li>
+						<a href="index2.html">首页</a>
+					</li>
+					<li>
+						<a href="#">指标管理</a>
+					</li>
+					<li>
+						<a href="indexDefinition.html">指标定义</a>
+					</li>
+				</ol>
+			</div>
+		</div>
+		<!--header-->
+		<div class="row" style="padding-left: 2%;">
+			<form class="form-inline">
+				<div class="form-group">
+					<label>指标编号</label>
+					<div class="input-group">
+						<input type="text" class="form-control" id="indexId">
+					</div>
+				</div>
+				<div class="form-group">
+					<label>指标名称</label>
+					<div class="input-group">
+						<input type="text" class="form-control" id="indexName">
+					</div>
+				</div>
+				<div class="form-group">
+					<label>指标类别</label>
+					<select class="input-select" id="indexType">
+						<option>----------请选择----------</option>
+						<option>---A---</option>
+						<option>---B---</option>
+						<option>---C---</option>
+						<option>---D---</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label>指标细类</label>
+					<select class="input-select" id="indexClass">
+						<option>----------请选择----------</option>
+						<option>---A1---</option>
+						<option>---A2---</option>
+						<option>---A3---</option>
+						<option>---A4---</option>
+					</select>
+				</div>
+				<div class="form-group" >
+					<label>指标状态</label>
+					<div class="checkbox">
+						<input type="checkbox" value="">正常
+						<input type="checkbox" value="">作废
+					</div>
+				</div>
+				<div class="form-group">
+					<a id="search" type="submit" class="btn btn-default"><i class="fa fa-search" title="开始搜索"></i></a>
+					<a id="reset" class="btn btn-default"><i class="glyphicon glyphicon-refresh" title="重置"></i></a>
+					<a id="indexAdd" class="btn btn-default"><i class="glyphicon glyphicon-plus-sign" title="指标新增"></i></a>
+				</div>
+			</form>
+		</div>
+		<br />
+		<div id="tableContent" style="display: block;">
+			<!--for table-->
+			<table id="table"></table>
+		</div>
+
+		<!--for pop up-->
+		<!--指标明细-->
+		<div id="indexDetails" class="" style="display: none;">
+			<div>
+				<table class="table table-bordered">
+					<tr>
+						<td>
+							<label>指标编号:</label><span id="detIndexId" class="index-details">Z0001</span></td>
+						<td>
+							<label>指标名称:</label><span id="detIndexName" class="index-details" style="color:#00B83F;">各项存款(人民币)</span></td>
+						<td>
+							<label>指标类别:</label><span id="detIndexType" class="index-details" style="color:#00B83F;">机构类指标</span></td>
+						<td>
+							<label>指标周期:</label><span id="detIndexTerm" class="index-details">日</span></td>
+					</tr>
+					<tr>
+						<td colspan="4">
+							<label>公式细类:</label><span id="detFormulaClass" class="index-details"></span></td>
+					</tr>
+					<tr>
+						<td>
+							<label>指标算法类别:</label><span id="detIndexAlgorithmClass" class="index-details">SQL公式</span></td>
+						<td>
+							<label>指标来源类别:</label><span id="detIndexSourceCategory" class="index-details">行内总账数据</span></td>
+						<td>
+							<label>指标汇总方式:</label><span id="detIndexCollectionMethod" class="index-details">按时汇总</span></td>
+						<td>
+							<label>缺值处理方式:</label><span id="detMisValProMode" class="index-details">不处理</span></td>
+					</tr>
+					<tr>
+						<td>
+							<label>指标标志:</label><span id="detIndexMark" class="index-details">定量指标</span></td>
+						<td>
+							<label>指标单位:</label><span id="detIndexUnit" class="index-details">元</span></td>
+						<td>
+							<label>是否主要指标:</label><span id="detBeMainIndex" class="index-details">是</span></td>
+						<td>
+							<label>是否临时指标:</label><span id="detBeTempIndex" class="index-details">是</span></td>
+					</tr>
+					<tr>
+						<td>
+							<label>趋势:</label><span id="detTrend" class="index-details">值越大越好</span></td>
+						<td>
+							<label>对应字典编号:</label><span id="detDicNum" class="index-details"></span></td>
+						<td>
+							<label>指标结果是否进行汇总:</label><span id="detBeAggregateIndexResults" class="index-details">否</span></td>
+						<td>
+							<label>列名:</label><span id="detColName" class="index-details">INDEXRESULT</span></td>
+					</tr>
+					<tr>
+						<td colspan="4">
+							<label>备注:</label><span id="detRemarks" class="index-details"></span></td>
+					</tr>
+
+				</table>
+			</div>
+			<div>
+				<table class="table table-bordered">
+					<tr>
+						<td style=" font-size:medium">机构类指标</td>
+						<td>指标算法详细说明</td>
+						<td width="700px">select 'Z0001' as indexcode,'#reporttime#' as reporttime,CORPORATION||'000000' as deptcode,sum(CREDITBALANCE) as indexvalue,CORPORATION as corporation from OOS_GLGL where GL_COURSE1 in ('2002','2012','2013','2017','2018') and GL_COURSE2='00' and
+							CURTYPE='CNY' and deptcode=CORPORATION || ||'999998' group by CORPORATION || '000000',CORPORATION</td>
+					</tr>
+				</table>
+			</div>
+			<hr class="dashLine" />
+			<div>
+				<table class="table table-bordered">
+					<caption>
+						<label style="font-size: large;color: orange;">指标预警值区间</label>
+					</caption>
+					<tr>
+						<th>下限值</th>
+						<th>上限值</th>
+						<th>区间开闭</th>
+						<th>区间对应颜色</th>
+					</tr>
+					<tr>
+						<td style="color:green">0.0</td>
+						<td style="color:green">4.0E10</td>
+						<td>开-闭</td>
+						<td>绿</td>
+					</tr>
+					<tr>
+						<td style="color:orange">4.0E10</td>
+						<td style="color:orange">6.0E10</td>
+						<td>开-闭</td>
+						<td>橙</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<!--指标新增修改-->
+		<div id="indexAddUpdate" style="display: none;">
+			<!--stemp1-->
+			<div id="stemp1" style="padding: 40px;">
+				<form class="form-inline">
+					<div class="form-group">
+						<label>指标编号:</label>
+						<input class="form-control" id="adduIndexId"></input>
+						<label>指标名称:</label>
+						<input class="form-control" id="adduIndexName"></input>
+						<label>指标类别:</label>
+						<input class="form-control" id="adduIndexName"></input>
+					</div>
+					<div class="form-group" style="padding-top:15px ;">
+						<label>指标周期:</label>
+						<select class="input-select" id="adduIndexTerm">
+							<option value="">日</option>
+							<option value="">月</option>
+							<option value="">年</option>
+						</select>
+						<label>指标算法类别:</label>
+						<select class="form-control" id="adduIndexAlgorithmType" style="width: 143px;">
+							<option value="">SQL公式</option>
+							<option value="">公式二</option>
+							<option value="">公式三</option>
+						</select>
+						<label>指标来源类别:</label>
+						<select class="form-control" id="adduIndexSourceType" style="width: 143px;">
+							<option value="">行内总账数据</option>
+							<option value="">来源类别二</option>
+							<option value="">来源类别三</option>
+						</select>
+					</div>
+					<div class="form-group" style="padding-top:15px ;">
+						<label>指标汇总方式:</label>
+						<select class="form-control" id="adduIndexSummaryMethod" style="width: 143px;">
+							<option value="">按时汇总</option>
+							<option value="">汇总方式二</option>
+							<option value="">汇总方式三</option>
+						</select>
+						<label>缺值处理方式:</label>
+						<select class="form-control" id="adduMisValProMode" style="width: 143px;">
+							<option value="">不处理</option>
+							<option value="">处理方式一</option>
+							<option value="">处理方式二</option>
+						</select>
+						<label>指标标志:</label>
+						<select class="input-select" id="adduIndexFlag">
+							<option value="">定量指标</option>
+							<option value="">指标标志一</option>
+							<option value="">指标标志二</option>
+						</select>
+					</div>
+					<div class="form-group" style="padding-top:15px ;">
+						<label>指标单位:</label>
+						<select class="input-select" id="adduIndexUnit">
+							<option value="">元</option>
+							<option value="">美元</option>
+						</select>
+						<label>是否主要指标:</label>
+						<select class="input-select" id="adduBeMainIndex" style="width: 143px;">
+							<option value="">是</option>
+							<option value="">否</option>
+						</select>
+						<label>趋势:</label>
+						<select class="input-select" id="adduTrend" style="width: 200px;">
+							<option value="">值越大越好</option>
+							<option value="">值越小越好</option>
+						</select>
+					</div>
+					<div class="form-group" style="padding-top:15px ;">
+						<label>是否临时指标:</label>
+						<select class="input-select" id="adduBeTempIndex" style="width: 143px;">
+							<option value="">是</option>
+							<option value="">否</option>
+						</select>
+						<label>对应字典编号:</label>
+						<input class="form-control" style="width: 143px;" />
+						<label>指标结果是否进行汇总:</label>
+						<select class="input-select" id="adduBeAggregateIndexResults" style="width: 90px;">
+							<option value="">是</option>
+							<option value="">否</option>
+						</select>
+					</div>
+					<div class="form-group" style="padding-top:15px ;">
+						<label>列名:</label>
+						<input class="form-control" style="width: 670px;" />
+					</div>
+					<div class="form-group" style="padding-top:15px ;">
+						<label>备注:</label>
+						<textarea class="form-control" style="width: 670px;"></textarea>
+					</div>
+					<div class="form-group" style="padding-top:15px ;">
+						<label>指标公式编辑:</label>
+						<textarea class="form-control" style="width: 615px;"></textarea>
+					</div>
+					<div class="form-group" style="padding-top:15px ;">
+						<button type="button" id="adduSetIndexValueWarning" class="btn btn-chartjs" onclick="setIndexValueWarning()">设置指标值预警区间</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<!--设置指标值预警区间-->
+		<div class="wrapper" id="setWarningIntervalOfIndexValue" style="display: none;">
+			<div class="row">
+				<div class="col-xs-4">
+					<button id="setWarn_add" class="btn btn-default">新增</button>
+					<button id="setWarn_del" class="btn btn-default">删除</button>
+				</div>
+			</div>
+			<table id="setWarn_table"></table>
+		</div>
+		<!--指标预警区间新增-->
+		<div class="wrapper" id="indexValueWarningAdd" style="display: none;">
+			<form>
+				<div class="col-xs-12">
+					<div class="form-group col-xs-12">
+						<label>下限值</label><input class="form-control" />
+					</div>
+				</div>
+				<div class="col-xs-12">
+					<div class="form-group col-xs-12">
+						<label>上限值</label><input class="form-control" />
+					</div>
+				</div>
+				<div class="col-xs-12">
+					<div class="form-group col-xs-12">
+						<label>区间开闭</label><select class="form-control">
+							<option>开-闭</option>
+							<option>开-开</option>
+							<option>闭-开</option>
+							<option>闭-闭</option>
+						</select>
+					</div>
+				</div>
+				<div class="col-xs-12">
+					<div class="form-group col-xs-12">
+					<label>区间对应颜色</label><select class="form-control">
+						<option>绿</option>
+						<option>橙</option>
+						<option>黑</option>
+					</select>
+					</div>
+				</div>
+			</form>
+		</div>
+
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/bootstrap-datetimepicker.min.js"></script>
+		<script src="js/bootstrap-datetimepicker.zh-CN.js"></script>
+		<script src="js/jquery.ztree.all.min.js"></script>
+		<script src="js/layer/layer.min.js"></script>
+		<script src="js/Chart.js-2.6.0/dist/Chart.js"></script>
+		<script src="js/bootstrap-table/bootstrap-table.min.js"></script>
+
+		<script src="js/indexDefinition.js"></script>
+		<script>
+			$(document).ready(function() {
+				//				initCurrentDate();
+				//				initOrgTree();
+				//				initChart();
+				initTable();
+			});
+		</script>
+	</body>
+
+</html>

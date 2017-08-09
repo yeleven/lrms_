@@ -1,0 +1,42 @@
+[
+	{
+		"id": "001",
+		"assetsName": "xxx",
+		"assetsClass": "xxx",
+		"moneyAmount": "1000000"
+	},
+	{
+		"id": "002",
+		"assetsName": "xxx",
+		"assetsClass": "xxx",
+		"moneyAmount": "1000000"
+	},
+	{
+		"id": "003",
+		"assetsName": "xxx",
+		"assetsClass": "xxx",
+		"moneyAmount": "1000000"
+	},
+	{
+		"id": "004",
+		"assetsName": "xxx",
+		"assetsClass": "xxx",
+		"moneyAmount": "1000000"
+	},
+	{
+		"id": "005",
+		"assetsName": "xxx",
+		"assetsClass": "xxx",
+		"moneyAmount": "1000000"
+	},
+	{
+		"id": "006",
+		"assetsName": "xxx",
+		"assetsClass": "xxx",
+		"moneyAmount": "1000000"
+	},
+	{
+		"id": "合计",
+		"moneyAmount": "6000000"
+	}
+]

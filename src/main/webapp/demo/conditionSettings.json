@@ -1,0 +1,18 @@
+[
+	{
+		"conditionDescribe": "描述1",
+		"light": "0.1",
+		"moderate": "0.2",
+		"severe": "0.3",
+		"rpLine": "line1",
+		"rpCol": "col1"
+	},
+	{
+		"conditionDescribe": "描述2",
+		"light": "-0.2",
+		"moderate": "-0.3",
+		"severe": "-0.4",
+		"rpLine": "line2",
+		"rpCol": "col2"
+	}
+]

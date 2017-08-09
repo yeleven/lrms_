@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>指标分析</title>
+		<link href="css/bootstrap.min.css" rel="stylesheet" />
+		<link href="css/font-awesome.min.css" rel="stylesheet" />
+		<link href="css/style.css" rel="stylesheet" />
+		<link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+		<link href="css/zTreeStyle/zTreeStyle.css" rel="stylesheet" />
+		<link href="css/bootstrap-table/bootstrap-table.min.css" />
+		<link href="css/select2.min.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<div class="row">
+			<div class="col-lg-12">
+					<ol class="breadcrumb">
+					<li>
+						<a href="index2.html">首页</a>
+					</li>
+					<li>
+						<a href="#">指标管理</a>
+					</li>
+					<li>
+						<a href="indexAnalysis.html">指标分析</a>
+					</li>
+				</ol>
+			</div>
+		</div>
+		<!--header-->
+		<div class="row" style="padding-left: 2%;">
+			<form class="form-inline">
+				<label>指标名称</label>
+				<div class="form-group">
+					<div class="input-group">
+						<input type="hidden" id="indexId" />
+						<select class="js-example-basic-single" style="width: 172px;height: 34px;">
+							<option value="">流动性比例</option>
+							<option value="">存贷比</option>
+							<option value="">核心负债比例</option>
+							<option value="">流动性缺口率</option>
+							<option value="">最大十家存款客户存款比例</option>
+							<option value="">同业市场负债比例</option>
+							<option value="">最大十家同业融入比例</option>
+							<option value="">流动性覆盖率</option>
+							<option value="">净稳定资金比例</option>
+							<option value="">超额备付金率</option>
+						</select>
+					</div>
+				</div>
+				<label>机构</label>
+				<div class="form-group">
+					<div class="input-group">
+						<input type="hidden" id="orgId" />
+						<input type="text" class="form-control" id="orgName" readonly>
+						<span class="input-group-btn"> 
+			        			<button type="button" class="btn btn-picker" id="orgLoad"><i class="fa fa-tree"></i></button> 
+			        		</span>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label>起止时间</label>
+					<input type="text" class="form-control" id="datePicker1" readonly>~
+					<input type="text" class="form-control" id="datePicker2" readonly>
+				</div>
+				<div class="form-group text-right">
+					<a id="search" type="submit" class="btn btn-default"><i class="fa fa-search" title="开始搜索"></i></a>
+					<a id="reset" class="btn btn-default"><i class="glyphicon glyphicon-refresh" title="重置"></i></a>
+				</div>
+			</form>
+		</div>
+		<br />
+		<!--/header-->
+		<!--for search-->
+		<div id="searchContent" style="display: none;">
+			<div class="row">
+				<div id="chartContent" class="col-xs-5">
+					<p align="center">趋势分析</p>
+					<canvas id="chart"></canvas>
+				</div>
+				<!--for table-->
+				<p align="center">变动分析</p>
+				<div id="tableContent" class="col-xs-6">
+					<table id="table"></table>
+					<canvas id="barChart"></canvas>
+				</div>
+			</div>
+		</div>
+		<!--/for search-->
+		<!--for pop up-->
+		<div id="treeContent" style="display:none;">
+			<ul id="tree" class="ztree"></ul>
+		</div>
+
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/bootstrap-datetimepicker.min.js"></script>
+		<script src="js/bootstrap-datetimepicker.zh-CN.js"></script>
+		<script src="js/jquery.ztree.all.min.js"></script>
+		<script src="js/layer/layer.min.js"></script>
+		<script src="js/Chart.js-2.6.0/dist/Chart.js"></script>
+		<script src="js/bootstrap-table/bootstrap-table.min.js"></script>
+		<script src="js/select2.full.min.js"></script>
+
+		<script src="js/indexAnalysis.js"></script>
+		<script>
+			$(document).ready(function() {
+				//				initCurrentDate();
+				initOrgTree();
+				$('.js-example-basic-single').select2();
+				initChart();
+				initTable();
+			});
+		</script>
+	</body>
+
+</html>

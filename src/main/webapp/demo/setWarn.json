@@ -1,0 +1,14 @@
+[
+	{
+		"minValue": "0.0",
+		"maxValue": "40000000000",
+		"interval": "开-闭",
+		"intervalColor": "绿"
+	},
+	{
+		"minValue": "40000000000",
+		"maxValue": "60000000000",
+		"interval": "开-闭",
+		"intervalColor": "绿"
+	}
+]

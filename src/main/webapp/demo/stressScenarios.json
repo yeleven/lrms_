@@ -1,0 +1,42 @@
+[
+	{
+		"sceneName": "流动性资产价值的侵蚀",
+		"influenceFactor": "流入减少",
+		"sceneDescribe": "持续时间按期限计算"
+	},
+	{
+		"sceneName": "零售存款的大量流失",
+		"influenceFactor": "流出增大",
+		"sceneDescribe": "持续时间按期限计算"
+	},
+	{
+		"sceneName": "批发性融资来源的可获得性下降",
+		"influenceFactor": "流入减少",
+		"sceneDescribe": "持续时间按期限计算"
+	},
+	{
+		"sceneName": "融资期限缩短和融资成本提高",
+		"influenceFactor": "流入减少",
+		"sceneDescribe": "持续时间按期限计算"
+	},
+	{
+		"sceneName": "交易对手要求追加保证金或担保",
+		"influenceFactor": "流出增大",
+		"sceneDescribe": "持续时间按期限计算"
+	},
+	{
+		"sceneName": "交易对手的可交易额减少或总交易对手减少",
+		"influenceFactor": "流入减少",
+		"sceneDescribe": "持续时间按期限计算"
+	},
+	{
+		"sceneName": "主要交易对手违约或破产",
+		"influenceFactor": "流入减少",
+		"sceneDescribe": "持续时间按期限计算"
+	},
+	{
+		"sceneName": "表外业务、复杂产品和交易、超出合约义务的隐性支持对流动性的损耗",
+		"influenceFactor": "流出增大",
+		"sceneDescribe": "持续时间按期限计算"
+	}
+]

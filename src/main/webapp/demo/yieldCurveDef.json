@@ -1,0 +1,12 @@
+[
+	{
+		"yieldId": "yield01",
+		"yieldName": "收益率曲线01"
+	},{
+		"yieldId": "yield02",
+		"yieldName": "收益率曲线02"
+	},{
+		"yieldId": "yield03",
+		"yieldName": "收益率曲线03"
+	}
+]

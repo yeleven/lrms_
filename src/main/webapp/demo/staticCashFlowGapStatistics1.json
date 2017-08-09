@@ -1,0 +1,67 @@
+
+[
+    {
+        "header": "现金流入",
+        "dateType1d":"2669.32",
+        "dateType7d": "1760.36",
+        "dateType14d": "571.28",
+        "dateType1m":"1436.60",
+        "dateType2m":"3223.91",
+        "dateType3m":"2758.17",
+        "dateType6m":"7460.56",
+        "dateType9m":"3761.21",
+        "dateType1y":"4536.50",
+        "dateType2y":"637.00",
+        "dateType3y":"100.00",
+        "dateType5y":"0.00",
+        "dateTypeUpTo5y":"0.00"
+    },
+    {
+        "header": "现金流出",
+        "dateType1d":"-12350.00",
+        "dateType7d": "-293.19",
+        "dateType14d": "-369.13",
+        "dateType1m":"-1093.78",
+        "dateType2m":"-3340.57",
+        "dateType3m":"-3073.39",
+        "dateType6m":"-6616.51",
+        "dateType9m":"-1412.74",
+        "dateType1y":"-1441.94",
+        "dateType2y":"-1786.37",
+        "dateType3y":"-1655.62",
+        "dateType5y":"-1612.75",
+        "dateTypeUpTo5y":"-523.24"
+    },
+    {
+    		"header": "缺口",
+        "dateType1d":"-9680.67",
+        "dateType7d": "1467.16",
+        "dateType14d": "202.14",
+        "dateType1m":"342.81",
+        "dateType2m":"-116.65",
+        "dateType3m":"-945.21",
+        "dateType6m":"844.05",
+        "dateType9m":"2368.46",
+        "dateType1y":"3094.55",
+        "dateType2y":"-1149.37",
+        "dateType3y":"-1555.62",
+        "dateType5y":"-1612.75",
+        "dateTypeUpTo5y":"-523.24"
+    },
+    {
+    		"header": "累计缺口",
+        "dateType1d":"-9680.67",
+        "dateType7d": "8213.50",
+        "dateType14d": "-8011.36",
+        "dateType1m":"-7668.54",
+        "dateType2m":"-7785.20",
+        "dateType3m":"-8730.41",
+        "dateType6m":"-7885.36",
+        "dateType9m":"-5517.89",
+        "dateType1y":"-2423.34",
+        "dateType2y":"-3572.72",
+        "dateType3y":"-5128.34",
+        "dateType5y":"-6741.10",
+        "dateTypeUpTo5y":"-7264.34"
+    }
+]
